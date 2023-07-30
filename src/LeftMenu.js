@@ -1,8 +1,10 @@
 import React from 'react';
 import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
 import LeftMenuItem from './LeftMenuItem';
+import d20 from './assets/d20.png';
 
 const drawerWidth = 250;
 const items = [
@@ -76,7 +78,7 @@ const items = [
     {
         name: 'DnD Beyond',
         link: null,
-        subItems:[
+        subItems: [
             {
                 name: 'Cubic Order Character Sheets',
                 link: null,
@@ -96,7 +98,7 @@ const items = [
                 name: 'Montegue Character Sheets',
                 link: null,
                 subItems: null,
-            },            {
+            }, {
                 name: 'Capulet Character Sheets',
                 link: null,
                 subItems: null,
@@ -106,7 +108,7 @@ const items = [
 
 ]
 
-function LeftMenu(){
+function LeftMenu() {
     return (
         <React.Fragment>
             {/* Left Drawer */}
@@ -122,17 +124,28 @@ function LeftMenu(){
                 variant="permanent"
                 anchor="left"
             >
-                <Toolbar></Toolbar>
+                <Toolbar>
+                    <Box 
+                        component="img"
+                        sx={{
+                            maxHeight: { xs: 100, md: 100 },
+                            maxWidth: { xs: 100, md: 100 },
+                            mx: 'auto',
+                            my: 4
+                          }}
+                        src={d20} 
+                    />
+                </Toolbar>
                 <List>
-                    
+
                     {
                         items.map(item => (
-                            <LeftMenuItem 
+                            <LeftMenuItem
                                 menuItem={item}
-                                />
+                            />
                         ))
                     }
-                   
+
                 </List>
             </Drawer>
         </React.Fragment>
