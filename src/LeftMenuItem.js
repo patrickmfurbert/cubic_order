@@ -3,7 +3,7 @@ import List from '@mui/material/List';
 import LeftMenuItemComponent from './LeftMenuItemComponent';
 import { Collapse } from '@mui/material';
 
-function LeftMenuItem({ menuItem }) {
+function LeftMenuItem({ menuItem, setContentComponent }) {
     const [isOpen, setIsOpen] = React.useState(false);
     const isExpandable = menuItem.subItems && menuItem.subItems.length > 0;
 
@@ -14,6 +14,7 @@ function LeftMenuItem({ menuItem }) {
             subItems={menuItem.subItems}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
+            setContentComponent={setContentComponent}
         />
     )
 
@@ -30,6 +31,7 @@ function LeftMenuItem({ menuItem }) {
                         name={item.name}
                         link={item.link}
                         subItems={item.subItems}
+                        setContentComponent={setContentComponent}
                     />
                 ))}
             </List>

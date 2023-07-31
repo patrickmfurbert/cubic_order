@@ -1,13 +1,22 @@
 import React from 'react';
-import ContentComponentDisplay from './ContentComponentDisplay';
+import TownMap from './TownMap';
 
 
 
-function ContentComponent(){
+function ContentComponent({ contentComponent }){
+
+    const renderSelectedContentComponent = () => {
+        switch(contentComponent) {
+            case "TownMap":
+                return <TownMap />;
+            default:
+                return null;
+        }
+    }
 
     return(
         <React.Fragment>
-            <ContentComponentDisplay />
+            {renderSelectedContentComponent()}
         </React.Fragment>
     );
 }

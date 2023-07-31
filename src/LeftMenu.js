@@ -108,7 +108,12 @@ const items = [
 
 ]
 
-function LeftMenu() {
+function LeftMenu({setContentComponent}) {
+
+    const handleSetContentComponent = () => {
+        setContentComponent("TownMap");
+    }
+
     return (
         <React.Fragment>
             {/* Left Drawer */}
@@ -134,6 +139,7 @@ function LeftMenu() {
                             my: 4
                           }}
                         src={d20} 
+                        onClick={() => handleSetContentComponent()}
                     />
                 </Toolbar>
                 <List>
@@ -143,6 +149,7 @@ function LeftMenu() {
                             <LeftMenuItem
                                 key={item.name}
                                 menuItem={item}
+                                setContentComponent={setContentComponent}
                             />
                         ))
                     }

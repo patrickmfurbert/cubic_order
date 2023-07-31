@@ -1,17 +1,20 @@
 import React from 'react';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-function LeftMenuItemComponent({ name, link, subItems, isOpen, setIsOpen }) {
+function LeftMenuItemComponent({ name, link, subItems, isOpen, setIsOpen, setContentComponent }) {
     
     const isExpandable = subItems && subItems.length > 0;
 
     const handleExpandContractClick = () => {
         setIsOpen(!isOpen);
+    }
+
+    const handleSetContentComponent = (name) => {
+        setContentComponent(name);
     }
 
     return (
@@ -23,11 +26,6 @@ function LeftMenuItemComponent({ name, link, subItems, isOpen, setIsOpen }) {
                         href={link}
                         onClick={handleExpandContractClick}
                     >
-
-                        {/* <ListItemIcon>
-
-                        </ListItemIcon> */}
-
                         <ListItemText primary={name} />
 
                         {!isOpen && <ExpandMoreIcon />}
@@ -38,12 +36,8 @@ function LeftMenuItemComponent({ name, link, subItems, isOpen, setIsOpen }) {
                         <ListItemButton
                             data-key={name}
                             href={link}
-                            onClick={handleExpandContractClick}
+                            onClick={() => handleSetContentComponent(name)}
                         >
-                            {/* <ListItemIcon>
-
-                            </ListItemIcon> */}
-
                             <ListItemText primary={name} />
                         </ListItemButton>
                     )

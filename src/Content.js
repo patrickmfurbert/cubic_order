@@ -13,6 +13,9 @@ const theme = createTheme({
     },});
 
 function Content() {
+
+    const [contentComponent, setContentComponent] = React.useState("TownMap");
+
     return (
         <ThemeProvider theme={theme}>
         <React.Fragment>
@@ -23,8 +26,8 @@ function Content() {
                         alignItems: 'center',
                         height: '100vh'  
                     }}>
-                <LeftMenu />
-                <ContentComponent />
+                <LeftMenu setContentComponent={setContentComponent}/>
+                <ContentComponent contentComponent={contentComponent}/>
             </Box>
         </React.Fragment>
         </ThemeProvider>
