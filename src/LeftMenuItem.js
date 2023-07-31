@@ -26,6 +26,7 @@ function LeftMenuItem({ menuItem }) {
             <List>
                 {menuItem.subItems.map(item => (
                     <LeftMenuItemComponent
+                        key={item.name}
                         name={item.name}
                         link={item.link}
                         subItems={item.subItems}

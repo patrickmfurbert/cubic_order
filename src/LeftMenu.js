@@ -141,6 +141,7 @@ function LeftMenu() {
                     {
                         items.map(item => (
                             <LeftMenuItem
+                                key={item.name}
                                 menuItem={item}
                             />
                         ))
