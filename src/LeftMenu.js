@@ -54,7 +54,7 @@ const items = [
         link: null,
         subItems: [
             {
-                name: 'Ru\'s Dragon Ladies',
+                name: 'Rus Dragon Ladies',
                 link: null,
                 subItems: null
             },
@@ -85,7 +85,7 @@ const items = [
                 subItems: null,
             },
             {
-                name: 'Ru\'s Dragon Ladies Character Sheets',
+                name: 'Rus Dragon Ladies Character Sheets',
                 link: null,
                 subItems: null,
             },
